@@ -1,0 +1,427 @@
+<!-- ============================================================
+     FANDIT · Landing "Encuentra Subvenciones"
+     Borrador 1 — autocontenido, full-bleed y responsive
+     Todo el CSS está scopeado bajo #fe para no chocar con el tema
+     Botones CTA = href="#" (PLACEHOLDER pasarela de pago)
+     Imágenes = bloques marcados [Imagen: ...] listos para sustituir
+     ============================================================ -->
+<div id="fe">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&display=swap');
+
+/* ---------- Reset / full-bleed ---------- */
+#fe{
+  --amarillo:#FFE500;
+  --negro:#0d0d0d;
+  --blanco:#FFFFFF;
+  --gris:#E7E6E6;
+  --gris-txt:#44546A;
+  --rojo:#E94F35;
+  --azul:#0A7CE8;
+  --verde:#179287;
+  --radio:20px;
+  --maxw:1180px;
+  position:relative;
+  width:100vw;
+  max-width:100vw;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow-x:hidden;
+  font-family:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  color:var(--negro);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-align:left;
+  box-sizing:border-box;
+}
+#fe *,#fe *::before,#fe *::after{box-sizing:border-box;}
+#fe p{margin:0 0 1em;}
+#fe h1,#fe h2,#fe h3,#fe h4{margin:0 0 .4em;line-height:1.1;font-weight:800;letter-spacing:-.02em;}
+#fe a{text-decoration:none;color:inherit;}
+#fe img{max-width:100%;display:block;}
+#fe strong{font-weight:800;}
+
+/* ---------- Layout helpers ---------- */
+#fe .fe-container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+#fe .fe-section{padding:84px 0;}
+#fe .fe-center{text-align:center;}
+#fe .fe-hl{background:linear-gradient(180deg,transparent 55%,var(--amarillo) 55%);padding:0 .1em;}
+#fe .fe-eyebrow{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-txt);margin-bottom:14px;}
+
+/* ---------- Botones ---------- */
+#fe .fe-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  background:var(--negro);color:var(--blanco);
+  font-weight:800;font-size:1.05rem;
+  padding:18px 36px;border-radius:999px;border:0;cursor:pointer;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  box-shadow:0 6px 0 rgba(0,0,0,.12);
+}
+#fe .fe-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.22);}
+#fe .fe-btn--amarillo{background:var(--amarillo);color:var(--negro);}
+#fe .fe-btn--big{font-size:1.2rem;padding:22px 46px;}
+#fe .fe-btn-note{display:block;margin-top:12px;font-size:.85rem;color:var(--gris-txt);}
+
+/* ---------- HERO ---------- */
+#fe .fe-hero{background:var(--amarillo);padding:72px 0 80px;}
+#fe .fe-hero .fe-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+#fe .fe-hero h1{font-size:clamp(2.3rem,5vw,4rem);font-weight:900;}
+#fe .fe-hero .fe-lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:36ch;margin-bottom:28px;color:#1a1a1a;}
+#fe .fe-hero-proof{margin-top:26px;font-size:.95rem;color:#1a1a1a;}
+#fe .fe-hero-proof b{font-size:1.4rem;font-weight:900;}
+#fe .fe-hero-proof small{display:block;font-size:.75rem;color:#5b5b3a;margin-top:4px;}
+
+/* ---------- Placeholder de imagen ---------- */
+#fe .fe-img-ph{
+  width:100%;aspect-ratio:1/1;border-radius:var(--radio);
+  background:repeating-linear-gradient(45deg,rgba(0,0,0,.04),rgba(0,0,0,.04) 14px,rgba(0,0,0,.07) 14px,rgba(0,0,0,.07) 28px);
+  border:2px dashed rgba(0,0,0,.3);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-weight:700;color:#3a3a2a;padding:24px;font-size:.95rem;
+}
+#fe .fe-img-ph.fe-wide{aspect-ratio:16/9;}
+
+/* ---------- Intro ---------- */
+#fe .fe-intro h2{font-size:clamp(1.8rem,3.4vw,2.8rem);max-width:18ch;margin:0 auto .5em;}
+#fe .fe-intro p{font-size:1.15rem;max-width:62ch;margin:0 auto;color:#2a2a2a;}
+
+/* ---------- Pasos ---------- */
+#fe .fe-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px;}
+#fe .fe-step{background:var(--blanco);border:1px solid var(--gris);border-radius:var(--radio);padding:26px 20px;position:relative;transition:transform .15s,box-shadow .15s;}
+#fe .fe-step:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08);}
+#fe .fe-step .fe-num{font-size:2.4rem;font-weight:900;color:var(--amarillo);-webkit-text-stroke:1.5px var(--negro);line-height:1;display:block;margin-bottom:14px;}
+#fe .fe-step h3{font-size:1.1rem;}
+#fe .fe-step p{font-size:.92rem;color:var(--gris-txt);margin:0;}
+
+/* ---------- Para ti ---------- */
+#fe .fe-forti{background:var(--gris);}
+#fe .fe-forti-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;}
+#fe .fe-forti-card{background:var(--blanco);border-radius:var(--radio);padding:34px;}
+#fe .fe-forti-card h3{font-size:1.35rem;margin-bottom:18px;}
+#fe .fe-forti-card ul{list-style:none;margin:0;padding:0;}
+#fe .fe-forti-card li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:1.02rem;border-bottom:1px solid #f0f0f0;}
+#fe .fe-forti-card li:last-child{border-bottom:0;}
+#fe .fe-tick{flex:0 0 auto;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9rem;color:#fff;margin-top:1px;}
+#fe .fe-tick--si{background:var(--verde);}
+#fe .fe-tick--no{background:var(--rojo);}
+
+/* ---------- Qué recibes ---------- */
+#fe .fe-includes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px;}
+#fe .fe-inc-card{background:#fffdf0;border:1px solid var(--amarillo);border-radius:var(--radio);padding:30px;}
+#fe .fe-inc-card .fe-ico{width:54px;height:54px;border-radius:14px;background:var(--amarillo);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:16px;}
+#fe .fe-inc-card h3{font-size:1.2rem;}
+#fe .fe-inc-card p{font-size:.98rem;color:var(--gris-txt);margin:0;}
+#fe .fe-inc-card.fe-span2{grid-column:1 / -1;}
+
+/* ---------- Precio ---------- */
+#fe .fe-price{margin-top:50px;background:var(--negro);color:var(--blanco);border-radius:28px;padding:54px 40px;text-align:center;}
+#fe .fe-price .fe-price-big{font-size:clamp(3rem,8vw,5rem);font-weight:900;line-height:1;color:var(--amarillo);}
+#fe .fe-price .fe-price-sub{font-size:1rem;opacity:.85;margin-bottom:26px;}
+#fe .fe-price .fe-price-scenarios{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px;margin:30px auto 0;}
+#fe .fe-price-sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,229,0,.4);border-radius:16px;padding:22px;text-align:left;}
+#fe .fe-price-sc b{color:var(--amarillo);display:block;font-size:1.15rem;margin-bottom:6px;}
+#fe .fe-price-sc span{font-size:.92rem;opacity:.85;}
+#fe .fe-guarantee{margin-top:26px;font-size:.95rem;opacity:.8;display:flex;gap:8px;justify-content:center;align-items:center;}
+
+/* ---------- Testimonios (HUECOS para rellenar) ---------- */
+#fe .fe-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
+#fe .fe-testi{background:var(--blanco);border:2px dashed var(--gris);border-radius:var(--radio);padding:28px;min-height:200px;display:flex;flex-direction:column;}
+#fe .fe-testi .fe-stars{color:var(--amarillo);-webkit-text-stroke:.5px #caa700;font-size:1.1rem;margin-bottom:12px;letter-spacing:2px;}
+#fe .fe-testi p{color:#9a9a9a;font-style:italic;flex:1;}
+#fe .fe-testi .fe-testi-author{display:flex;align-items:center;gap:12px;margin-top:14px;}
+#fe .fe-testi .fe-avatar{width:42px;height:42px;border-radius:50%;background:var(--gris);display:flex;align-items:center;justify-content:center;font-weight:800;color:#9a9a9a;}
+#fe .fe-testi .fe-testi-author small{color:#b0b0b0;}
+#fe .fe-placeholder-tag{display:inline-block;background:var(--amarillo);color:var(--negro);font-size:.7rem;font-weight:800;letter-spacing:.05em;padding:3px 10px;border-radius:99px;margin-bottom:14px;text-transform:uppercase;align-self:flex-start;}
+
+/* ---------- Medios / alianzas ---------- */
+#fe .fe-media{background:var(--negro);color:#fff;}
+#fe .fe-media h2{color:#fff;}
+#fe .fe-logos{display:flex;flex-wrap:wrap;gap:18px 38px;justify-content:center;align-items:center;margin-top:34px;opacity:.92;}
+#fe .fe-logos span{font-weight:800;font-size:1.15rem;color:#fff;opacity:.7;letter-spacing:.02em;}
+#fe .fe-partners{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:30px;}
+#fe .fe-partners span{border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:10px 22px;font-weight:700;font-size:.95rem;}
+
+/* ---------- FAQ ---------- */
+#fe .fe-faq-list{max-width:820px;margin:40px auto 0;display:flex;flex-direction:column;gap:14px;}
+#fe .fe-faq{background:#f7f8fb;border-radius:16px;border:1px solid var(--gris);overflow:hidden;}
+#fe .fe-faq summary{cursor:pointer;list-style:none;padding:22px 26px;font-weight:800;font-size:1.08rem;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+#fe .fe-faq summary::-webkit-details-marker{display:none;}
+#fe .fe-faq summary::after{content:'+';font-size:1.6rem;font-weight:400;color:var(--azul);transition:transform .2s;flex:0 0 auto;}
+#fe .fe-faq[open] summary::after{transform:rotate(45deg);}
+#fe .fe-faq .fe-faq-body{padding:0 26px 24px;color:var(--gris-txt);font-size:1rem;}
+
+/* ---------- CTA band ---------- */
+#fe .fe-ctaband{background:var(--amarillo);text-align:center;}
+#fe .fe-ctaband h2{font-size:clamp(1.8rem,3.6vw,2.8rem);max-width:20ch;margin:0 auto .4em;}
+#fe .fe-ctaband p{font-size:1.1rem;max-width:50ch;margin:0 auto 30px;color:#1a1a1a;}
+
+/* ---------- Cierre / mini-footer ---------- */
+#fe .fe-mini{background:var(--negro);color:#cfcfcf;text-align:center;padding:40px 0;font-size:.9rem;}
+#fe .fe-mini a{color:var(--amarillo);}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  #fe .fe-hero .fe-grid{grid-template-columns:1fr;gap:34px;}
+  #fe .fe-hero{padding:48px 0 56px;}
+  #fe .fe-steps{grid-template-columns:repeat(2,1fr);}
+  #fe .fe-testi-grid{grid-template-columns:1fr 1fr;}
+  #fe .fe-section{padding:60px 0;}
+}
+@media(max-width:640px){
+  #fe .fe-container{padding:0 18px;}
+  #fe .fe-forti-grid,#fe .fe-includes-grid,#fe .fe-price .fe-price-scenarios,#fe .fe-testi-grid{grid-template-columns:1fr;}
+  #fe .fe-steps{grid-template-columns:1fr;}
+  #fe .fe-inc-card.fe-span2{grid-column:auto;}
+  #fe .fe-price{padding:38px 22px;}
+  #fe .fe-btn{width:100%;}
+  #fe .fe-section{padding:48px 0;}
+}
+</style>
+
+<!-- ===== HERO ===== -->
+<section class="fe-hero">
+  <div class="fe-container">
+    <div class="fe-grid">
+      <div>
+        <span class="fe-eyebrow">Servicio Encuentra · Análisis personalizado</span>
+        <h1>Descubre todas las subvenciones para las que <span class="fe-hl">tu empresa puede ser elegible</span></h1>
+        <p class="fe-lead">Analizamos tu perfil a fondo, te lo explicamos con claridad y te dejamos todo preparado para que no se te escape ninguna oportunidad.</p>
+        <a href="#" class="fe-btn fe-btn--big" data-cta="solicitar">Solicita tu análisis · 350&nbsp;€</a>
+        <span class="fe-btn-note">Pago único · IVA no incluido · Sin permanencia</span>
+        <div class="fe-hero-proof">
+          <b>+47.000</b> ayudas públicas analizadas en un solo lugar
+          <small>Estatales, autonómicas y locales · Dato según FANDIT</small>
+        </div>
+      </div>
+      <div>
+        <div class="fe-img-ph">[Imagen: FANDITO con lupa / persona revisando informe de subvenciones · 1:1]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTRO / PROBLEMA ===== -->
+<section class="fe-section fe-intro fe-center">
+  <div class="fe-container">
+    <h2>¿Te has preguntado qué subvenciones existen para tu empresa o proyecto?</h2>
+    <p>Hay miles de ayudas públicas abiertas en España. El problema no es que no existan: es que están repartidas en decenas de webs oficiales, escritas en lenguaje burocrático y con plazos que se escapan. <strong>En FANDIT lo analizamos por ti</strong> y te lo contamos sin tecnicismos.</p>
+  </div>
+</section>
+
+<!-- ===== CÓMO FUNCIONA (5 pasos) ===== -->
+<section class="fe-section" style="background:var(--blanco);padding-top:0;">
+  <div class="fe-container">
+    <div class="fe-center">
+      <span class="fe-eyebrow">Cómo funciona</span>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">Del «no sé por dónde empezar» a tener un plan claro</h2>
+    </div>
+    <div class="fe-steps">
+      <div class="fe-step">
+        <span class="fe-num">01</span>
+        <h3>Formulario detallado</h3>
+        <p>Nos cuentas sector, tamaño, provincia, actividad y objetivos. Cuanto mejor te conozcamos, más preciso será el análisis.</p>
+      </div>
+      <div class="fe-step">
+        <span class="fe-num">02</span>
+        <h3>Preparación del informe</h3>
+        <p>Analizamos tu perfil y preparamos un informe a medida con las convocatorias abiertas y próximas que encajan: importe, requisitos y plazos.</p>
+      </div>
+      <div class="fe-step">
+        <span class="fe-num">03</span>
+        <h3>Sesión de revisión</h3>
+        <p>Nos reunimos contigo para presentarte el informe y aclarar dudas. Sin tecnicismos, sin burocracia.</p>
+      </div>
+      <div class="fe-step">
+        <span class="fe-num">04</span>
+        <h3>Informe definitivo</h3>
+        <p>Incorporamos lo revisado juntos y te entregamos la versión final, lista para consultar cuando la necesites.</p>
+      </div>
+      <div class="fe-step">
+        <span class="fe-num">05</span>
+        <h3>Alertas 3 meses</h3>
+        <p>Configuramos alertas para que recibas avisos cuando se abran nuevas convocatorias que encajen contigo. No vuelves a perderte nada.</p>
+      </div>
+    </div>
+    <div class="fe-center" style="margin-top:46px;">
+      <a href="#" class="fe-btn" data-cta="solicitar">Quiero mi análisis personalizado</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ¿ES PARA TI? ===== -->
+<section class="fe-section fe-forti">
+  <div class="fe-container fe-center">
+    <span class="fe-eyebrow">¿Es para ti?</span>
+    <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">Comprueba si este servicio encaja contigo</h2>
+    <div class="fe-forti-grid" style="text-align:left;">
+      <div class="fe-forti-card">
+        <h3>Es para ti si…</h3>
+        <ul>
+          <li><span class="fe-tick fe-tick--si">✓</span> Tienes una empresa, eres autónomo o estás emprendiendo y crees que «algo habrá» pero no sabes qué.</li>
+          <li><span class="fe-tick fe-tick--si">✓</span> No tienes tiempo de rastrear webs oficiales ni de descifrar las bases de cada convocatoria.</li>
+          <li><span class="fe-tick fe-tick--si">✓</span> Quieres saber, con claridad, qué ayudas encajan con tu perfil antes de mover un dedo.</li>
+          <li><span class="fe-tick fe-tick--si">✓</span> Prefieres que un experto te lo explique a seguir perdiéndote oportunidades.</li>
+        </ul>
+      </div>
+      <div class="fe-forti-card">
+        <h3>NO es para ti si…</h3>
+        <ul>
+          <li><span class="fe-tick fe-tick--no">✕</span> Buscas que te garanticemos que te concederán una subvención (eso lo decide la administración, no nosotros).</li>
+          <li><span class="fe-tick fe-tick--no">✕</span> Ya tienes identificadas todas tus convocatorias y solo necesitas tramitarlas.</li>
+          <li><span class="fe-tick fe-tick--no">✕</span> No estás dispuesto a dedicar 15 minutos a rellenar el formulario inicial.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUÉ RECIBES + PRECIO ===== -->
+<section class="fe-section" style="background:var(--blanco);">
+  <div class="fe-container">
+    <div class="fe-center">
+      <span class="fe-eyebrow">Esto es lo que te llevas</span>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">Un análisis completo, hecho por personas</h2>
+    </div>
+    <div class="fe-includes-grid">
+      <div class="fe-inc-card">
+        <div class="fe-ico">📋</div>
+        <h3>Informe a medida</h3>
+        <p>Todas las convocatorias abiertas y próximas que encajan con tu perfil, con importe, requisitos y plazos de cada una.</p>
+      </div>
+      <div class="fe-inc-card">
+        <div class="fe-ico">🤝</div>
+        <h3>Sesión de revisión 1:1</h3>
+        <p>Una reunión contigo para presentarte el informe, aclarar dudas y asegurarnos de que entiendes cada oportunidad.</p>
+      </div>
+      <div class="fe-inc-card">
+        <div class="fe-ico">🔔</div>
+        <h3>Alertas personalizadas · 3 meses</h3>
+        <p>Configuramos avisos en la plataforma para que te enteres en cuanto se abra una convocatoria que te interese.</p>
+      </div>
+      <div class="fe-inc-card">
+        <div class="fe-ico">🧭</div>
+        <h3>¿Quieres solicitarla?</h3>
+        <p>Te ponemos en contacto con consultores especializados que se encargan de toda la tramitación por ti.</p>
+      </div>
+    </div>
+
+    <!-- Precio -->
+    <div class="fe-price">
+      <div class="fe-price-sub">Análisis personalizado · pago único</div>
+      <div class="fe-price-big">350&nbsp;€</div>
+      <div class="fe-price-sub">IVA no incluido</div>
+      <a href="#" class="fe-btn fe-btn--amarillo fe-btn--big" data-cta="solicitar">Solicita tu análisis ahora</a>
+      <div class="fe-price-scenarios">
+        <div class="fe-price-sc">
+          <b>250&nbsp;€ en vez de 350&nbsp;€</b>
+          <span>Si tu asesoría o asociación ya es cliente de FANDIT. Solo tienes que indicarnos su nombre al contratar.</span>
+        </div>
+        <div class="fe-price-sc">
+          <b>Te devolvemos los 350&nbsp;€</b>
+          <span>Si nos presentas a tu asesoría y se hace cliente de FANDIT gracias a tu presentación.</span>
+        </div>
+      </div>
+      <div class="fe-guarantee">🛡️ Te decimos con honestidad qué oportunidades hay. Sin promesas vacías.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS (HUECOS PARA RELLENAR CON TESTIMONIOS REALES) ===== -->
+<section class="fe-section fe-center" style="background:var(--gris);">
+  <div class="fe-container">
+    <span class="fe-eyebrow">Lo que dicen quienes ya lo han probado</span>
+    <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">Testimonios reales</h2>
+    <p style="max-width:54ch;margin:0 auto;color:var(--gris-txt);">⚠️ Espacios reservados para testimonios reales de clientes. Sustituye cada tarjeta por una reseña verificable (con permiso del cliente).</p>
+    <div class="fe-testi-grid" style="text-align:left;">
+      <div class="fe-testi">
+        <span class="fe-placeholder-tag">Rellenar</span>
+        <div class="fe-stars">★★★★★</div>
+        <p>"[Pega aquí el testimonio real del cliente. Qué problema tenía, qué le aportó el análisis Encuentra y qué resultado obtuvo.]"</p>
+        <div class="fe-testi-author"><div class="fe-avatar">?</div><div><strong>Nombre del cliente</strong><br><small>Empresa / sector</small></div></div>
+      </div>
+      <div class="fe-testi">
+        <span class="fe-placeholder-tag">Rellenar</span>
+        <div class="fe-stars">★★★★★</div>
+        <p>"[Pega aquí otro testimonio real. Mejor si menciona la claridad del informe o el ahorro de tiempo.]"</p>
+        <div class="fe-testi-author"><div class="fe-avatar">?</div><div><strong>Nombre del cliente</strong><br><small>Empresa / sector</small></div></div>
+      </div>
+      <div class="fe-testi">
+        <span class="fe-placeholder-tag">Rellenar</span>
+        <div class="fe-stars">★★★★★</div>
+        <p>"[Pega aquí un tercer testimonio real. Idealmente de un autónomo o pyme, que es el público principal.]"</p>
+        <div class="fe-testi-author"><div class="fe-avatar">?</div><div><strong>Nombre del cliente</strong><br><small>Empresa / sector</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDIOS / ALIANZAS ===== -->
+<section class="fe-section fe-media fe-center">
+  <div class="fe-container">
+    <span class="fe-eyebrow" style="color:#ffe500;">Confían en FANDIT</span>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.3rem);">Han hablado de nosotros</h2>
+    <div class="fe-logos">
+      <span>ABC</span><span>La Sexta</span><span>Onda Cero</span><span>COPE</span><span>El Español</span><span>Emprendedores</span><span>Telemadrid</span><span>Infobae</span>
+    </div>
+    <p style="margin-top:40px;opacity:.8;">Y trabajamos con</p>
+    <div class="fe-partners">
+      <span>Repsol · Solred</span><span>CEOE</span><span>Grupo2000</span><span>Bitrix24</span><span>Lefebvre</span><span>Legálitas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="fe-section" style="background:var(--blanco);">
+  <div class="fe-container fe-center">
+    <span class="fe-eyebrow">Preguntas frecuentes</span>
+    <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">Resolvemos tus dudas</h2>
+    <div class="fe-faq-list" style="text-align:left;">
+      <details class="fe-faq">
+        <summary>¿Me garantizáis que conseguiré una subvención?</summary>
+        <div class="fe-faq-body">No, y desconfía de quien te lo prometa. La concesión la decide siempre la administración pública. Lo que hacemos es identificar todas las ayudas para las que tu perfil <em>puede ser elegible</em> y dejarte preparado para no perder ninguna oportunidad.</div>
+      </details>
+      <details class="fe-faq">
+        <summary>¿Cuánto tarda el análisis?</summary>
+        <div class="fe-faq-body">Una vez recibimos tu formulario completo, preparamos el informe a medida y agendamos contigo la sesión de revisión. [Indicar aquí el plazo estimado de entrega.]</div>
+      </details>
+      <details class="fe-faq">
+        <summary>¿Qué pasa si quiero solicitar una de las ayudas?</summary>
+        <div class="fe-faq-body">Te ponemos en contacto con consultores especializados que se encargan de toda la tramitación por ti. Tú decides si quieres dar ese paso.</div>
+      </details>
+      <details class="fe-faq">
+        <summary>¿Por qué cuesta 350 €?</summary>
+        <div class="fe-faq-body">Es un análisis hecho por personas expertas, personalizado para tu perfil, más una sesión 1:1 y 3 meses de alertas. Si tu asesoría ya es cliente de FANDIT, pagas 250 €. Y si nos la presentas y se hace cliente, te devolvemos el importe íntegro.</div>
+      </details>
+      <details class="fe-faq">
+        <summary>¿Sirve para autónomos y particulares, o solo para empresas?</summary>
+        <div class="fe-faq-body">Sirve para empresas, autónomos y emprendedores. Adaptamos el análisis a tu situación concreta: sector, tamaño, provincia y objetivos.</div>
+      </details>
+      <details class="fe-faq">
+        <summary>¿El pago incluye IVA?</summary>
+        <div class="fe-faq-body">El precio de 350 € es sin IVA. Se trata de un pago único, sin permanencia ni suscripción.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="fe-section fe-ctaband">
+  <div class="fe-container">
+    <h2>No dejes dinero público sobre la mesa</h2>
+    <p>Descubre hoy las ayudas de tu sector. Un análisis claro, honesto y hecho por expertos.</p>
+    <a href="#" class="fe-btn fe-btn--big" data-cta="solicitar">Solicita tu análisis · 350&nbsp;€</a>
+    <span class="fe-btn-note">Pago único · IVA no incluido</span>
+  </div>
+</section>
+
+<!-- ===== MINI CIERRE ===== -->
+<div class="fe-mini">
+  <div class="fe-container">
+    FANDIT · Ayudas y subvenciones más fáciles para todos · <a href="https://fandit.es" target="_blank" rel="noopener">fandit.es</a>
+  </div>
+</div>
+
+</div>
+<!-- /#fe -->
