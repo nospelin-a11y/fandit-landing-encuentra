@@ -66,8 +66,8 @@
 #fe .fe-hero .fe-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
 #fe .fe-hero h1{font-size:clamp(2.3rem,5vw,4rem);font-weight:900;}
 #fe .fe-hero .fe-lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:36ch;margin-bottom:28px;color:#1a1a1a;}
-#fe .fe-hero-proof{margin-top:26px;font-size:.95rem;color:#1a1a1a;}
-#fe .fe-hero-proof b{font-size:1.4rem;font-weight:900;}
+#fe .fe-hero-proof{margin-top:26px;font-size:1.15rem;font-weight:800;color:#1a1a1a;}
+#fe .fe-hero-proof b{font-weight:800;}
 #fe .fe-hero-proof small{display:block;font-size:.75rem;color:#5b5b3a;margin-top:4px;}
 
 /* ---------- Placeholder de imagen ---------- */
@@ -125,12 +125,12 @@
 
 /* ---------- Testimonios (HUECOS para rellenar) ---------- */
 #fe .fe-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;}
-#fe .fe-testi{background:var(--blanco);border:2px dashed var(--gris);border-radius:var(--radio);padding:28px;min-height:200px;display:flex;flex-direction:column;}
+#fe .fe-testi{background:var(--blanco);border:1px solid var(--gris);border-radius:var(--radio);padding:28px;min-height:200px;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(0,0,0,.05);}
 #fe .fe-testi .fe-stars{color:var(--amarillo);-webkit-text-stroke:.5px #caa700;font-size:1.1rem;margin-bottom:12px;letter-spacing:2px;}
-#fe .fe-testi p{color:#9a9a9a;font-style:italic;flex:1;}
+#fe .fe-testi p{color:#2a2a2a;font-style:normal;line-height:1.55;flex:1;}
 #fe .fe-testi .fe-testi-author{display:flex;align-items:center;gap:12px;margin-top:14px;}
-#fe .fe-testi .fe-avatar{width:42px;height:42px;border-radius:50%;background:var(--gris);display:flex;align-items:center;justify-content:center;font-weight:800;color:#9a9a9a;}
-#fe .fe-testi .fe-testi-author small{color:#b0b0b0;}
+#fe .fe-testi .fe-avatar{width:42px;height:42px;border-radius:50%;background:var(--amarillo);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--negro);}
+#fe .fe-testi .fe-testi-author small{color:#6a6a6a;}
 #fe .fe-placeholder-tag{display:inline-block;background:var(--amarillo);color:var(--negro);font-size:.7rem;font-weight:800;letter-spacing:.05em;padding:3px 10px;border-radius:99px;margin-bottom:14px;text-transform:uppercase;align-self:flex-start;}
 
 /* ---------- Medios / alianzas ---------- */
@@ -138,6 +138,11 @@
 #fe .fe-media h2{color:#fff;}
 #fe .fe-logos{display:flex;flex-wrap:wrap;gap:18px 38px;justify-content:center;align-items:center;margin-top:34px;opacity:.92;}
 #fe .fe-logos span{font-weight:800;font-size:1.15rem;color:#fff;opacity:.7;letter-spacing:.02em;}
+#fe .fe-media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;text-align:left;}
+#fe .fe-media-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px;display:flex;flex-direction:column;}
+#fe .fe-media-item h3{font-size:1.05rem;color:#fff;margin-bottom:8px;}
+#fe .fe-media-item p{font-size:.9rem;color:#cfcfcf;margin:0 0 14px;line-height:1.5;flex:1;}
+#fe .fe-media-item a{color:var(--amarillo);font-weight:700;font-size:.88rem;align-self:flex-start;}
 #fe .fe-partners{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:30px;}
 #fe .fe-partners span{border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:10px 22px;font-weight:700;font-size:.95rem;}
 
@@ -165,11 +170,12 @@
   #fe .fe-hero{padding:48px 0 56px;}
   #fe .fe-steps{grid-template-columns:repeat(2,1fr);}
   #fe .fe-testi-grid{grid-template-columns:1fr 1fr;}
+  #fe .fe-media-grid{grid-template-columns:1fr 1fr;}
   #fe .fe-section{padding:60px 0;}
 }
 @media(max-width:640px){
   #fe .fe-container{padding:0 18px;}
-  #fe .fe-forti-grid,#fe .fe-includes-grid,#fe .fe-price .fe-price-scenarios,#fe .fe-testi-grid{grid-template-columns:1fr;}
+  #fe .fe-forti-grid,#fe .fe-includes-grid,#fe .fe-price .fe-price-scenarios,#fe .fe-testi-grid,#fe .fe-media-grid{grid-template-columns:1fr;}
   #fe .fe-steps{grid-template-columns:1fr;}
   #fe .fe-inc-card.fe-span2{grid-column:auto;}
   #fe .fe-price{padding:38px 22px;}
@@ -186,7 +192,7 @@
         <span class="fe-eyebrow">Análisis personalizado de subvenciones</span>
         <h1>¿Qué subvenciones hay para <span class="fe-hl">tu empresa</span>?</h1>
         <p class="fe-lead">Analizamos tu proyecto a fondo, te lo explicamos con claridad y dejamos todo preparado para que no se te escape ninguna subvención.</p>
-        <a href="#" class="fe-btn fe-btn--big" data-cta="solicitar">350€ - Solicita tu análisis de subvenciones</a>
+        <a href="https://fandit.es/landing/tramitacion/encuentra-nuevo" class="fe-btn fe-btn--big" data-cta="solicitar">350€ - Solicita tu análisis de subvenciones</a>
         <span class="fe-btn-note">Pago único · IVA no incluido · Sin permanencia</span>
         <div class="fe-hero-proof">
           <b>Más de 70.000</b> ayudas públicas analizadas
@@ -243,7 +249,7 @@
       </div>
     </div>
     <div class="fe-center" style="margin-top:46px;">
-      <a href="#" class="fe-btn" data-cta="solicitar">Quiero mi análisis personalizado</a>
+      <a href="https://fandit.es/landing/tramitacion/encuentra-nuevo" class="fe-btn" data-cta="solicitar">Quiero mi análisis personalizado</a>
     </div>
   </div>
 </section>
@@ -310,7 +316,7 @@
       <div class="fe-price-sub">Análisis personalizado · pago único</div>
       <div class="fe-price-big">350&nbsp;€</div>
       <div class="fe-price-sub">IVA no incluido</div>
-      <a href="#" class="fe-btn fe-btn--amarillo fe-btn--big" data-cta="solicitar">Solicita tu análisis ahora</a>
+      <a href="https://fandit.es/landing/tramitacion/encuentra-nuevo" class="fe-btn fe-btn--amarillo fe-btn--big" data-cta="solicitar">Solicita tu análisis ahora</a>
       <div class="fe-price-scenarios">
         <div class="fe-price-sc">
           <b>DESCUENTO - pagas 250&nbsp;€ en vez de 350&nbsp;€</b>
@@ -332,22 +338,19 @@
     <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">Testimonios reales</h2>
     <div class="fe-testi-grid" style="text-align:left;">
       <div class="fe-testi">
-        <span class="fe-placeholder-tag">Rellenar</span>
         <div class="fe-stars">★★★★★</div>
-        <p>"[Pega aquí el testimonio real del cliente. Qué problema tenía, qué le aportó el análisis Encuentra y qué resultado obtuvo.]"</p>
-        <div class="fe-testi-author"><div class="fe-avatar">?</div><div><strong>Nombre del cliente</strong><br><small>Empresa / sector</small></div></div>
+        <p>Somos un grupo de restaurantes, contratamos mucho personal y estamos expandiendo el negocio. Sabíamos que había subvenciones, pero no encontrábamos las que encajaban con nosotros. Contratamos los servicios de FANDIT para contarles el proyecto y nos buscaron todas las ayudas que encajaban. Al mes ya habíamos contratado a 2 personas con subvención y recibimos 4.000 € a fondo perdido. Muy recomendable.</p>
+        <div class="fe-testi-author"><div class="fe-avatar">K</div><div><strong>Keko</strong><br><small><a href="https://www.grupogomez.es/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Grupo Gómez</a></small></div></div>
       </div>
       <div class="fe-testi">
-        <span class="fe-placeholder-tag">Rellenar</span>
         <div class="fe-stars">★★★★★</div>
-        <p>"[Pega aquí otro testimonio real. Mejor si menciona la claridad del informe o el ahorro de tiempo.]"</p>
-        <div class="fe-testi-author"><div class="fe-avatar">?</div><div><strong>Nombre del cliente</strong><br><small>Empresa / sector</small></div></div>
+        <p>Tenemos 3 clínicas de estética y odontología y queríamos abrir una cuarta, pero no sabíamos si en Castilla-La Mancha o en Madrid. Gracias a la subvención Adelante Inversión de Castilla-La Mancha que nos enseñó Juan Fran de FANDIT, la expansión ha merecido la pena financieramente: nos han subvencionado el 50 % del coste de la maquinaria.</p>
+        <div class="fe-testi-author"><div class="fe-avatar">R</div><div><strong>Roberto</strong><br><small>Insitu Medicina y Odontología</small></div></div>
       </div>
       <div class="fe-testi">
-        <span class="fe-placeholder-tag">Rellenar</span>
         <div class="fe-stars">★★★★★</div>
-        <p>"[Pega aquí un tercer testimonio real. Idealmente de un autónomo o pyme, que es el público principal.]"</p>
-        <div class="fe-testi-author"><div class="fe-avatar">?</div><div><strong>Nombre del cliente</strong><br><small>Empresa / sector</small></div></div>
+        <p>Somos una fundación de enfermedades mentales y sabíamos que había subvenciones, pero estamos arrancando y no tenemos un equipo dedicado a esta parte, así que contratar el servicio Encuentra fue un acierto. Nos dieron un roadmap con todas las ayudas interesantes para la fundación de aquí a un año.</p>
+        <div class="fe-testi-author"><div class="fe-avatar">M</div><div><strong>Marta</strong><br><small>Fundación FACYTA</small></div></div>
       </div>
     </div>
   </div>
@@ -358,8 +361,14 @@
   <div class="fe-container">
     <span class="fe-eyebrow" style="color:#ffe500;">Confían en FANDIT</span>
     <h2 style="font-size:clamp(1.6rem,3vw,2.3rem);">Han hablado de nosotros</h2>
-    <div class="fe-logos">
-      <span>ABC</span><span>La Sexta</span><span>Onda Cero</span><span>COPE</span><span>El Español</span><span>Emprendedores</span><span>Telemadrid</span><span>Infobae</span>
+    <div class="fe-media-grid">
+      <div class="fe-media-item"><h3>Telemadrid</h3><p>FANDIT participa en el programa de la tarde.</p><a href="#" target="_blank" rel="noopener">Ver entrevista →</a></div>
+      <div class="fe-media-item"><h3>La Sexta</h3><p>Aparece en el telediario del domingo 27/07/2025 entrevistando a Pedro Robles (CEO de FANDIT) y a un par de casos de éxito que han accedido a subvenciones con ayuda de FANDIT.</p><a href="#" target="_blank" rel="noopener">Ver noticia →</a></div>
+      <div class="fe-media-item"><h3>101 TV</h3><p>Reportaje sobre la gestión de ayudas en Andalucía y las barreras burocráticas.</p><a href="#" target="_blank" rel="noopener">Ver noticia →</a></div>
+      <div class="fe-media-item"><h3>Radio Televisión de Canarias</h3><p>Aparece en el programa «Ponte al día», haciéndose eco de las novedades que combinan Inteligencia Artificial y subvenciones.</p><a href="#" target="_blank" rel="noopener">Ver noticia →</a></div>
+      <div class="fe-media-item"><h3>COPE</h3><p>Fuente experta en informativos y en «Herrera en COPE», destacando el problema del dinero público sin repartir.</p><a href="#" target="_blank" rel="noopener">Ver noticia →</a></div>
+      <div class="fe-media-item"><h3>Intereconomía</h3><p>Entrevista en el programa «A media sesión», analizando los retos actuales del sistema de ayudas.</p><a href="#" target="_blank" rel="noopener">Escuchar intervención →</a></div>
+      <div class="fe-media-item"><h3>El Español</h3><p>«Pedro Robles ha creado un buscador que encuentra cualquier ayuda pública en España en menos de un minuto.»</p></div>
     </div>
     <p style="margin-top:40px;opacity:.8;">Y trabajamos con</p>
     <div class="fe-partners">
@@ -407,7 +416,7 @@
   <div class="fe-container">
     <h2>No dejes dinero público sobre la mesa</h2>
     <p>Descubre hoy las ayudas de tu sector. Un análisis claro, honesto y hecho por expertos.</p>
-    <a href="#" class="fe-btn fe-btn--big" data-cta="solicitar">Solicita tu análisis · 350&nbsp;€</a>
+    <a href="https://fandit.es/landing/tramitacion/encuentra-nuevo" class="fe-btn fe-btn--big" data-cta="solicitar">Solicita tu análisis · 350&nbsp;€</a>
     <span class="fe-btn-note">Pago único · IVA no incluido</span>
   </div>
 </section>
